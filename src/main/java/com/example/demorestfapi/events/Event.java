@@ -2,12 +2,16 @@ package com.example.demorestfapi.events;
 
 import lombok.*;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Builder @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter @EqualsAndHashCode(of = "id")
+@Entity
 public class Event {
 
+    @Id @GeneratedValue
+    private Integer id;
     private String name;
     private String description;
     private LocalDateTime beginEnrollmentDateTime;
@@ -19,6 +23,8 @@ public class Event {
     private int maxPrice; // (optional)
     private int limitOfEnrollment;
     private boolean offline;
+    private boolean free;
+    @Enumerated(EnumType.STRING) // orinal의 경우에는 숫자값으로 enum값이.
     private EventStatus eventStatus;
 
 }
