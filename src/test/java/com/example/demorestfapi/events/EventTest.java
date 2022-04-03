@@ -2,6 +2,8 @@ package com.example.demorestfapi.events;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class EventTest {
@@ -14,19 +16,4 @@ class EventTest {
                 .build();
         assertThat(event).isNotNull();
     }
-
-    @Test
-    public void javaBean() {
-        // Given
-        Event event = new Event();
-
-        // when
-        String name = "Event";
-        event.setName(name);
-
-        // then
-        event.setDescription("dsadas");
-        assertThat(event.getName()).isEqualTo(name);
-    }
-
 }
